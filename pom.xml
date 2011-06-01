@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.nexr.platform.anaysis</groupId>
+	<artifactId>pdi-plugin-database-hive</artifactId>
+	<version>0.1-SNAPSHOT</version>
+	<name>Hive database plugin for PDI</name>
+
+	<properties>
+		<jdkLevel>1.6</jdkLevel>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.outputEncoding>UTF-8</project.build.outputEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>pentaho.kettle</groupId>
+			<artifactId>kettle-core</artifactId>
+			<version>TRUNK-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>pentaho.kettle</groupId>
+			<artifactId>kettle-db</artifactId>
+			<version>TRUNK-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>pentaho.kettle</groupId>
+			<artifactId>kettle-dbdialog</artifactId>
+			<version>TRUNK-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>pentaho</id>
+			<url>http://repo.pentaho.org/artifactory/pentaho/</url>
+		</repository>
+		<repository>
+			<id>pentaho-third-party</id>
+			<url>http://repo.pentaho.org/artifactory/third-party/</url>
+		</repository>
+
+	</repositories>
+</project>
