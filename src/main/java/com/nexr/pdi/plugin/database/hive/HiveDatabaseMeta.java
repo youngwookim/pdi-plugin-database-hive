@@ -158,7 +158,7 @@ public class HiveDatabaseMeta extends BaseDatabaseMeta implements
 				"DOUBLE", "DROP", "EXISTS", "EXPLAIN", "EXTENDED", "EXTERNAL", "FLOAT",
 				"FORMAT", "FROM", "FIELDS", "GRANT", "GROUP", "HAVING", "IF",
 				"IN", "INDEX", "INNER", "INOUT", "INSENSITIVE", "INSERT", "ITEMS",
-				"INT", "INTEGER", "INTERVAL", "INTO", "IS", "ITERATE", "JOIN",
+				"INT", "INTO", "IS", "ITERATE", "JOIN",
 				"KEYS", "LEFT", "LIKE", "LIMIT", "LOAD", "LOCATION", "LOCK", "LINES",
 				"MAP", "NOT", "NULL", "ON", "OR", "ORDER", "OUTER",
 				"OVERWRITE", "PARTITION", "PARTITIONED", "REGEXP", "ROW", "REDUCE", "RENAME", "REPLACE",
