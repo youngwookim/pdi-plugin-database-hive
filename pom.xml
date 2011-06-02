@@ -39,6 +39,5 @@
 			<id>pentaho-third-party</id>
 			<url>http://repo.pentaho.org/artifactory/third-party/</url>
 		</repository>
-
 	</repositories>
 </project>
