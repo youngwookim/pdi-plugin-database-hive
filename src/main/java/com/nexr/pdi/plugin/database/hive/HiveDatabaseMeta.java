@@ -7,10 +7,53 @@ import org.pentaho.di.core.exception.KettleDatabaseException;
 import org.pentaho.di.core.plugins.DatabaseMetaPlugin;
 import org.pentaho.di.core.row.ValueMetaInterface;
 
-@DatabaseMetaPlugin(type = "HIVE", typeDescription = "Hive")
+@DatabaseMetaPlugin(type = "HADOOP HIVE", typeDescription = "Hadoop Hive")
 public class HiveDatabaseMeta extends BaseDatabaseMeta implements
 		DatabaseInterface {
 
+	public String getDriverClass() {
+
+		return "org.apache.hadoop.hive.jdbc.HiveDriver";
+	}
+
+	public String getURL(String hostname, String port, String databaseName)
+			throws KettleDatabaseException {
+
+		return "jdbc:hive://" + hostname + ":" + port + "/" + databaseName;
+	}
+
+	public String getAddColumnStatement(String tablename, ValueMetaInterface v,
+			String tk, boolean use_autoinc, String pk, boolean semicolon) {
+		return "ALTER TABLE " + tablename + " ADD "
+				+ getFieldDefinition(v, tk, pk, use_autoinc, true, false);
+	}
+
+	public String getModifyColumnStatement(String tablename,
+			ValueMetaInterface v, String tk, boolean use_autoinc, String pk,
+			boolean semicolon) {
+		return "ALTER TABLE " + tablename + " MODIFY "
+				+ getFieldDefinition(v, tk, pk, use_autoinc, true, false);
+	}
+
+	public String[] getUsedLibraries() {
+		return new String[] { "" };
+	}
+
+	@Override
+	public int[] getAccessTypeList() {
+
+		return new int[] { DatabaseMeta.TYPE_ACCESS_NATIVE };
+	}
+
+	@Override
+	public int getDefaultDatabasePort() {
+		if (getAccessType() == DatabaseMeta.TYPE_ACCESS_NATIVE) {
+			return 10000;
+		} else {
+			return -1;
+		}
+	}
+	
 	public String getFieldDefinition(ValueMetaInterface v, String tk,
 			String pk, boolean use_autoinc, boolean add_fieldname,
 			boolean add_cr) {
@@ -74,49 +117,6 @@ public class HiveDatabaseMeta extends BaseDatabaseMeta implements
 		}
 
 		return retval;
-	}
-
-	public String getDriverClass() {
-
-		return "org.apache.hadoop.hive.jdbc.HiveDriver";
-	}
-
-	public String getURL(String hostname, String port, String databaseName)
-			throws KettleDatabaseException {
-
-		return "jdbc:hive://" + hostname + ":" + port + "/" + databaseName;
-	}
-
-	public String getAddColumnStatement(String tablename, ValueMetaInterface v,
-			String tk, boolean use_autoinc, String pk, boolean semicolon) {
-		return "ALTER TABLE " + tablename + " ADD "
-				+ getFieldDefinition(v, tk, pk, use_autoinc, true, false);
-	}
-
-	public String getModifyColumnStatement(String tablename,
-			ValueMetaInterface v, String tk, boolean use_autoinc, String pk,
-			boolean semicolon) {
-		return "ALTER TABLE " + tablename + " MODIFY "
-				+ getFieldDefinition(v, tk, pk, use_autoinc, true, false);
-	}
-
-	public String[] getUsedLibraries() {
-		return new String[] { "" };
-	}
-
-	@Override
-	public int[] getAccessTypeList() {
-
-		return new int[] { DatabaseMeta.TYPE_ACCESS_NATIVE };
-	}
-
-	@Override
-	public int getDefaultDatabasePort() {
-		if (getAccessType() == DatabaseMeta.TYPE_ACCESS_NATIVE) {
-			return 10000;
-		} else {
-			return -1;
-		}
 	}
 
 	@Override
