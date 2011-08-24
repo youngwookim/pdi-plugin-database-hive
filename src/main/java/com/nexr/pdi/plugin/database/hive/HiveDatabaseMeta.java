@@ -149,18 +149,19 @@ public class HiveDatabaseMeta extends BaseDatabaseMeta implements DatabaseInterf
     public String[] getReservedWords() {
 
         return new String[] { "ADD", "ALL", "ALTER", "AND", "AS", "ASC", "ARRAY", "BEFORE",
-                "BETWEEN", "BIGINT", "BY", "CASE", "COLUMN", "COLUMNS", "COMMENT", "COLLECTION",
-                "CREATE", "CROSS", "CLUSTER", "CLUSTERED", "DATABASE", "DATABASES", "DESC",
-                "DEFAULT", "DESCRIBE", "DISTRIBUTE", "DELIMITED", "DIRECTORY", "DISTINCT",
-                "DOUBLE", "DROP", "EXISTS", "EXPLAIN", "EXTENDED", "EXTERNAL", "FLOAT", "FORMAT",
-                "FROM", "FIELDS", "GRANT", "GROUP", "HAVING", "IF", "IN", "INDEX", "INNER",
-                "INOUT", "INSENSITIVE", "INSERT", "ITEMS", "INT", "INTO", "IS", "ITERATE", "JOIN",
-                "KEYS", "LEFT", "LIKE", "LIMIT", "LOAD", "LOCATION", "LOCK", "LINES", "MAP", "NOT",
-                "NULL", "ON", "OR", "ORDER", "OUTER", "OVERWRITE", "PARTITION", "PARTITIONED",
-                "REGEXP", "ROW", "REDUCE", "RENAME", "REPLACE", "REVOKE", "RIGHT", "RLIKE",
-                "SELECT", "SET", "SHOW", "SORT", "SMALLINT", "STRUCT", "STORED", "STRING", "TABLE",
-                "TERMINATED", "TINYINT", "TRANSFORM", "THEN", "UNION", "USE", "USING", "WHEN",
-                "WHERE" };
+                "BETWEEN", "BIGINT", "BUCKET", "BY", "CASE", "COLUMN", "COLUMNS", "COMMENT",
+                "COLLECTION", "CREATE", "CROSS", "STORED", "CLUSTER", "CLUSTERED", "DATABASE",
+                "DATABASES", "DESC", "DEFAULT", "DESCRIBE", "DISTRIBUTE", "DELIMITED", "DIRECTORY",
+                "DISTINCT", "DOUBLE", "DROP", "EXISTS", "EXPLAIN", "EXTENDED", "EXTERNAL", "FLOAT",
+                "FORMAT", "FROM", "FIELDS", "FUNCTIONS", "GRANT", "GROUP", "HAVING", "IF", "IN",
+                "INDEX", "INNER", "INOUT", "INSENSITIVE", "INSERT", "ITEMS", "INT", "INTO", "IS",
+                "ITERATE", "JOIN", "KEYS", "LEFT", "LIKE", "LIMIT", "LOAD", "LOCAL", "LOCATION",
+                "LOCK", "LINES", "MAP", "MODIFY", "NOT", "NULL", "ON", "OR", "OUT", "OF", "ORDER",
+                "OUTER", "OVERWRITE", "PARTITION", "PARTITIONED", "RLIKE", "REGEXP", "ROW",
+                "REDUCE", "RENAME", "REPLACE", "REVOKE", "RIGHT", "RLIKE", "SELECT",
+                "SEQUENCEFILE", "SET", "SHOW", "SORT", "SMALLINT", "STRUCT", "STORED", "STRING",
+                "TABLE", "TERMINATED", "TEXTFILE", "TINYINT", "TRANSFORM", "THEN", "UNION", "USE",
+                "USING", "WHEN", "WHERE" };
     }
 
     @Override
